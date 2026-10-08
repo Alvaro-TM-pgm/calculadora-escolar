@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fc">
+  <meta name="description" content="Acompanhe notas, médias e progresso escolar com a Calculadora Escolar.">
+  <title>Calculadora Escolar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Calculadora Escolar, início"><span class="brand-mark">CE</span><span>calculadora<span class="brand-light">escolar</span></span></a>
+      <div class="school-label">ESPAÇO DO ALUNO</div>
+      <nav class="nav-list" aria-label="Navegação principal">
+        <button class="nav-link active" data-view="dashboard"><span class="nav-icon">⌂</span>Visão geral</button>
+        <button class="nav-link" data-view="subjects"><span class="nav-icon">▦</span>Minhas disciplinas</button>
+        <button class="nav-link" data-view="summary"><span class="nav-icon">▤</span>Resumo do ano</button>
+        <button class="nav-link" data-view="settings"><span class="nav-icon">⚙</span>Configurações</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="privacy-note"><span>◈</span><div><strong>Seus dados são privados</strong><small>Salvos somente neste navegador.</small></div></div>
+        <button class="nav-link" id="themeToggle"><span class="nav-icon" id="themeIcon">☾</span><span id="themeText">Modo escuro</span></button>
+        <div class="profile-mini"><span class="avatar" id="avatarInitial">A</span><span class="profile-copy"><strong id="sidebarStudent">Meu espaço</strong><small id="sidebarYear">Ano letivo</small></span><button class="icon-button" data-view="settings" aria-label="Editar perfil">···</button></div>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu icon-button" id="menuToggle" aria-label="Abrir menu">☰</button><div class="breadcrumb">Meu espaço <span>/</span> <strong id="crumb">Visão geral</strong></div><div class="top-actions"><span class="school-chip" id="schoolChip">Meu ano escolar</span><button class="icon-button theme-mobile" id="themeToggleMobile" aria-label="Alternar tema">☾</button></div></header>
+      <div class="content" id="appContent"></div>
+      <footer class="footer">Calculadora Escolar <span>·</span> Seus dados ficam neste dispositivo</footer>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><div><p class="eyebrow" id="modalEyebrow">DISCIPLINA</p><h2 id="modalTitle">Detalhes</h2></div><button class="icon-button close-modal" aria-label="Fechar">×</button></div><div class="modal-body" id="modalBody"></div></section></div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+</body>
+</html>
