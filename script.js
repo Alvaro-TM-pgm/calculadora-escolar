@@ -2,10 +2,10 @@
   'use strict';
   const KEY = 'calculadora-escolar-v1';
   const defaults = { config: { minimum: 7, target: 28, terms: 4, maxGrade: 10, school: '', student: '', year: new Date().getFullYear() }, subjects: [], dark: false };
+  const clone = x => JSON.parse(JSON.stringify(x));
   let state = loadState(), view = 'dashboard', search = '', filter = 'all', sort = 'name', activeSubject = null, charts = {};
   const $ = (s, root = document) => root.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
-  const clone = x => JSON.parse(JSON.stringify(x));
   function loadState(){ try { const v=JSON.parse(localStorage.getItem(KEY)); if(!v||!Array.isArray(v.subjects)||!v.config) return clone(defaults); return {...clone(defaults),...v,config:{...defaults.config,...v.config}}; } catch { return clone(defaults); } }
   function save(){ localStorage.setItem(KEY, JSON.stringify(state)); syncProfile(); }
   function syncProfile(){ const c=state.config, name=c.student||'Meu espaço'; $('#sidebarStudent').textContent=name; $('#sidebarYear').textContent=c.year||'Ano letivo'; $('#avatarInitial').textContent=(name.trim()[0]||'A').toUpperCase(); $('#schoolChip').textContent=c.school||`Ano letivo ${c.year||''}`; document.body.classList.toggle('dark',!!state.dark); $('#themeIcon').textContent=state.dark?'☀':'☾'; $('#themeText').textContent=state.dark?'Modo claro':'Modo escuro'; $('#themeToggleMobile').textContent=state.dark?'☀':'☾'; }
