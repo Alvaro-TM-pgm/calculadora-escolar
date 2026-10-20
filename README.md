@@ -8,7 +8,7 @@ Abra `index.html` em um navegador moderno. Para publicar, envie os quatro arquiv
 
 ## Regra escolar
 
-Em **Configurações**, altere a média mínima, a pontuação anual necessária, a quantidade de períodos e a nota máxima. Os valores iniciais são média 7, nota máxima 10, quatro bimestres e meta de 28 pontos. A média atual considera somente os bimestres com avaliações cadastradas. Cada média bimestral usa a fórmula ponderada `soma(nota × peso) / soma(pesos)`; o peso padrão é 1.
+Em **Configurações**, altere a média mínima, a pontuação anual necessária, a quantidade de períodos e a nota máxima. Os valores iniciais são média 7, nota máxima 10, quatro bimestres e meta de 28 pontos. A seção Minhas disciplinas também oferece matérias sugeridas (como Português, Matemática, História e Ciências): cada botão adiciona a matéria imediatamente e impede duplicatas. Você também pode cadastrar matérias personalizadas. A média atual considera somente os bimestres com avaliações cadastradas. Cada média bimestral usa a fórmula ponderada `soma(nota × peso) / soma(pesos)`; o peso padrão é 1.
 
 ## Dados e privacidade
 
